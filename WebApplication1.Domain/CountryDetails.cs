@@ -26,6 +26,8 @@ public class CountryDetails
         Population = countryDetailsResponse.population;
         Currencies = CurrencyHelper.GetCurrencies(countryDetailsResponse.currencies);
         Languages = LanguageHelper.GetLanguages(countryDetailsResponse.languages);
+
+        //This constantly seems to be coming back empty from the API
         Borders = countryDetailsResponse.borders ?? new List<string>() { "There are no neighbouring countries/borders"};
     }
 }
