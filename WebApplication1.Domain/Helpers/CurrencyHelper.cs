@@ -8,7 +8,7 @@ public static class CurrencyHelper
     {
         if (currencies == null)
         {
-            return new List<string>();
+            return new List<string>() { "There are no official currencies" };
         }
 
         var currencyList = new List<string>();

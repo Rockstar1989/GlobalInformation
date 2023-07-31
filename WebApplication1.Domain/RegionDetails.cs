@@ -20,8 +20,10 @@ public class RegionDetails
         Name = regionDetailsResponse[0].region;
         Population = regionDetailsResponse.Sum(x => x.population);
 
-        Countries.AddRange(regionDetailsResponse.Select(x => x.name.official).Distinct());
+        var countries = regionDetailsResponse.Select(x => x.name.official).Distinct();
+        Countries.AddRange(countries.Any() ? countries : new List<string>() { "There are no countries in this region" });
 
-        Subregions.AddRange(regionDetailsResponse.Select(x => x.subregion).Distinct());
+        var subregions = regionDetailsResponse.Select(x => x.subregion).Distinct();
+        Subregions.AddRange(subregions.Any() ? subregions : new List<string>() { "There are no sub regions in this region" });
     }
 }

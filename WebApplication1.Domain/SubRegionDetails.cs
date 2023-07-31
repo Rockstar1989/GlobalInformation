@@ -20,6 +20,7 @@ public class SubRegionDetails
         Population = subRegionDetailsResponse.Sum(x => x.population);
         Region = subRegionDetailsResponse[0].region;
 
-        Countries.AddRange(subRegionDetailsResponse.Select(x => x.name.official).Distinct());
+        var countries = subRegionDetailsResponse.Select(x => x.name.official).Distinct();
+        Countries.AddRange(countries.Any() ? countries : new List<string>() { "There are no countries in this region" });
     }
 }

@@ -8,7 +8,7 @@ public static class LanguageHelper
     {
         if (languages == null)
         {
-            return new List<string>();
+            return new List<string>() { "There are no official languages" };
         }
 
         var languageList = new List<string>();

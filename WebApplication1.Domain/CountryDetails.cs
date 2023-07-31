@@ -26,6 +26,6 @@ public class CountryDetails
         Population = countryDetailsResponse.population;
         Currencies = CurrencyHelper.GetCurrencies(countryDetailsResponse.currencies);
         Languages = LanguageHelper.GetLanguages(countryDetailsResponse.languages);
-        Borders = countryDetailsResponse.borders ?? new List<string>();
+        Borders = countryDetailsResponse.borders ?? new List<string>() { "There are no neighbouring countries/borders"};
     }
 }
