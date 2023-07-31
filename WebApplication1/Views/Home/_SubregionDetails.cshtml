@@ -61,7 +61,11 @@
                 <ul>
                         @foreach (var country in Model.Countries)
                         {
-                        <li>@country</li>
+                        <li>
+                            <a href="#" class="country-link" data-country="@country">
+                                    @country
+                            </a>
+                        </li>
                         }
                 </ul>
             </td>

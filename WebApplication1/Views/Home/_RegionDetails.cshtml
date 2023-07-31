@@ -57,7 +57,11 @@
                 <ul>
                         @foreach (var country in Model.Countries)
                         {
-                        <li>@country</li>
+                        <li>
+                            <a href="#" class="country-link" data-country="@country">
+                                    @country
+                            </a>
+                        </li>
                         }
                 </ul>
             </td>
@@ -72,7 +76,11 @@
                 <ul>
                             @foreach (var subregion in Model.Subregions)
                             {
-                        <li>@subregion</li>
+                        <li>
+                            <a href="#" class="subregion-link" data-subregion="@subregion">
+                                        @subregion
+                            </a>
+                        </li>
                             }
                 </ul>
             </td>

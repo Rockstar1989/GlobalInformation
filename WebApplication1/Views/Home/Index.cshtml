@@ -63,6 +63,16 @@
                 "lengthMenu": [5, 10, 20, 50, 100, 200, 500],
             });
 
+            $(".modal-body").on("click", ".country-link", function () {
+                var countryName = $(this).data('country');
+                showDetailsModal('@Url.Action("CountryDetails")', { countryName: countryName });
+            });
+
+            $(".modal-body").on("click", ".subregion-link", function () {
+                var subregionName = $(this).data('subregion');
+                showDetailsModal('@Url.Action("SubregionDetails")', { subregionName: subregionName });
+            });
+
             $("#mainTable").on("click", ".country-link", function () {
                 var countryName = $(this).data('country');
                 showDetailsModal('@Url.Action("CountryDetails")', { countryName: countryName });
