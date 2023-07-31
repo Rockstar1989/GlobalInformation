@@ -1,0 +1,81 @@
+﻿@using GlobalInformation.Domain;
+@model RegionDetails
+
+<style>
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        font-size: .875rem
+    }
+
+    td {
+        padding: .25rem 1rem;
+        border-bottom: 1px solid #f1f1f1
+    }
+
+    table {
+        border-collapse: collapse;
+        border: 1px solid #f1f1f1;
+    }
+
+    tr:nth-child(even) {
+        background: #fafafa
+    }
+
+    td:nth-child(odd) {
+        font-weight: bold;
+    }
+
+    .small {
+        font-size: .685rem;
+        color: orangered
+    }
+
+    svg {
+        fill: orangered;
+        width: 20px
+    }
+
+    a {
+        cursor: pointer
+    }
+</style>
+
+<div class="container mt-4">
+    <h4>@Model.Name</h4>
+    <table>
+        <tr>
+            <td>Population</td>
+            <td>@Model.Population</td>
+        </tr>
+        <tr>
+            <td colspan="2">Countries in this Region</td>
+        </tr>
+        <tr>
+        <tr>
+            <td colspan="2">
+                <ul>
+                        @foreach (var country in Model.Countries)
+                        {
+                        <li>@country</li>
+                        }
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">Subregions in this Region</td>
+        </tr>
+        <tr>
+        <tr>
+            <td colspan="2">
+                <ul>
+                            @foreach (var subregion in Model.Subregions)
+                            {
+                        <li>@subregion</li>
+                            }
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
